@@ -1,0 +1,35 @@
+.food-details{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.food-info{
+    width: 60%;
+}
+.items-info{
+    display:flex;
+}
+.items-info * {
+    margin-right: 10px;
+}
+.food-to-cart{
+    min-width: 60%;
+    max-width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+#add-to-cart{
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+}
+.food-action{
+    border: 1px black solid;
+    height: fit-content;
+    border-radius: 5px;
+    padding: 10px;
+    
+}

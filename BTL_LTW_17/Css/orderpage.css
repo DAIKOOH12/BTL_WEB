@@ -1,0 +1,140 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a{
+    color: black;
+}
+.delifood-tag{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.delifood-tag input{
+    padding: 8px;
+}
+.search-bar{
+    border: 1px solid rgba(0, 0, 0, 0.327);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+#search-area{
+    border: 0;
+    width: 300px;
+}
+#search-area:focus{
+    outline: none;
+}
+.list-food{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+.row-list{
+    display: flex;
+    width: 90%;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.row-items{
+    max-width: 282px;
+    margin: 10px 15px;
+}
+.items-info-services{
+    display: flex;
+    justify-content: space-between;
+}
+.items-image img{
+    width: 282px;
+    border-radius: 5px;
+    height: 150px;
+}
+.row-items span,p{
+    color: rgba(0, 0, 0, 0.485);
+}
+
+@media only screen and (max-width:1200px){
+    .row-list a{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+    .row-list{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .row-items{
+        width: 100%;
+        margin: 10px 15px;
+    }
+    .items-image img{
+        width: 282px;
+        border-radius: 5px;
+        height: 150px;
+    }
+    .search-bar{
+        display: none;
+    }
+}
+@media only screen and (max-width:768px){
+    .items-image{
+        display: flex;
+        align-items: center;
+    }
+    .items-image img{
+        width: 120px;
+        border-radius: 5px;
+        height: 95px;
+    }
+    .row-list a{
+        width: 90%;
+    }
+    .row-items{
+        display: flex;
+        max-width: 100%;
+        width: 100%;
+    }
+    .items-container{
+        width: 100%;
+        padding: 0 10px;
+    }
+    .items-info-services{
+        justify-content: space-around;
+        width: 100%;
+        max-width: 300px;
+    }
+    .items-info-services>.info-time,.info-rate,.info-distance *{
+        margin-right: 5px;
+    }
+    .items-info-services .info-time,.info-rate,.info-distance{
+        display: flex;
+
+    }
+    *{
+        font-size: 13px;
+    }
+    .items-discount{
+        width: fit-content;
+        display: flex;
+    }
+    #banner-tag{
+        font-size: 14px;
+    }
+    .header{
+        width: 100%;
+    }
+    .header-icon{
+        display: none;
+    }
+    .header-account{
+        font-size: 12px;
+    }
+    .endof-header{
+        width: 30%;
+        justify-content: center;
+    }
+    .header-language{
+        display: none;
+    }
+}

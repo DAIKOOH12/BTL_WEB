@@ -12,8 +12,13 @@ namespace BTL_LTW_17.WebForms
     {
         public List<FoodModels> lstFoods = new List<FoodModels>();
         public FoodModels selFood;
+        public AccountModels currentUser = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["current_user"] != null)
+            {
+                currentUser = Session["current_user"] as AccountModels;
+            }
             if (!String.IsNullOrEmpty(Request.QueryString["sID"]))
             {
                 String id = Request.QueryString["sID"];

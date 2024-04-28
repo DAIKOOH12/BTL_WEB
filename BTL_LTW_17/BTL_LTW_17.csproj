@@ -2160,6 +2160,7 @@
     <Content Include="Images\logo_delifood.jpg" />
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\yen.jpg" />
+    <Content Include="JS\chititetmonan.js" />
     <Content Include="JS\Nav.js" />
     <Content Include="JS\PaginationActive.js" />
     <Content Include="JS\ScrollBookMark.js" />

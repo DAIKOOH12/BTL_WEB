@@ -1,18 +1,19 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TrangOrder.aspx.cs" Inherits="BTL_LTW_17.WebForms.TrangOrder" %>
 
 <!DOCTYPE html>
+<html lang="en">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../Css/chitietmonan.css" />
-    <link rel="stylesheet" href="../Css/mainpage.css" />
-    <link rel="stylesheet" href="../Css/orderpage.css" />
-    <link rel="stylesheet" href="../fontawesome-free-6.2.1-web/css/all.min.css" />
+    <link rel="stylesheet" href="../Css/mainpage.css">
+    <link rel="stylesheet" href="../Css/orderpage.css">
+    <link rel="stylesheet" href="../Css/chitietmonan.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.2.1-web/css/all.min.css">
     <script src="../fontawesome-free-6.2.1-web/js/all.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <!-- Start Header -->
@@ -46,43 +47,66 @@
         <!-- End header -->
         <div class="" style="width: 100%; height: 80px; background-color: rgb(244, 244, 244);"></div>
         <!-- Start Food Details -->
-        <%
-            Response.Write("<div class=\"food-details\">\r\n    " +
-                "<div class=\"food-to-cart\">\r\n        " +
-                "<div class=\"items-image\">\r\n            " +
-                $"<img src=\"{selFood.UrlImageFood.ToString()}\" alt=\"\">\r\n        " +
-                "</div>\r\n        " +
-                "<a href=\"\" style=\"cursor: pointer;\">\r\n            " +
-                "<div class=\"food-action\">\r\n                " +
-                "<i class=\"fa-solid fa-cart-shopping\" style=\"color: orangered;\"></i>\r\n                " +
-                "<button id=\"add-to-cart\">\r\n                    " +
-                "Thêm\r\n                    " +
-                "vào giỏ hàng</button>\r\n            " +
-                "</div>\r\n        " +
-                "</a>\r\n    " +
-                "</div>\r\n    " +
-                "<div class=\"food-info\">\r\n        " +
-                $"<h1>{selFood.SNameFood.ToString()}</h1>\r\n        " +
-                "<p>Bún - Phở - Cháo</p>\r\n       " +
-                " <div class=\"items-info\">\r\n            " +
-                "<div class=\"info-rate\">\r\n                " +
-                "<i class=\"fa-solid fa-star\" style=\"color: rgb(251, 205, 0);\"></i>\r\n                " +
-                $"<span>{selFood.FRate}</span>\r\n            </div>\r\n            " +
-                "<div class=\"info-time\">\r\n                " +
-                "<i class=\"fa-regular fa-clock\" style=\"color: rgba(0, 0, 0, 0.485);\"></i>\r\n                " +
-                $"<span>{selFood.ITime} phút</span>\r\n            </div>\r\n            " +
-                "<div class=\"info-distance\">\r\n                " +
-                "<i class=\"fa-solid fa-location-dot\" style=\"color: rgba(0, 0, 0, 0.485);\"></i>\r\n                " +
-                $"<span>{selFood.FDistance}km</span>\r\n            </div>\r\n        </div>\r\n        " +
-                "<div class=\"items-discount\" style=\"margin-top: 10px;\">\r\n            " +
-                "<i class=\"fa-solid fa-tag\" style=\"color: orangered;\"></i>\r\n           " +
-                $" <span>{selFood.STag}</span>\r\n        </div>\r\n        " +
-                "<div class=\"food-price\">\r\n            " +
-                $"<div class=\"old-price\" style=\"margin: 5px; text-decoration: line-through; color: rgba(0, 0, 0, 0.4); font-size: 15px;\">{selFood.IOldPrice}đ</div>\r\n            " +
-                $"<div class=\"old-price\" style=\"margin: 5px; color: red; font-size: 20px;\">{selFood.ISalePrice}đ</div>\r\n        " +
-                "</div>\r\n    </div>\r\n</div>");
-        %>
-
+        <div class="food-details">
+            <div class="food-to-cart">
+                <div class="items-image">
+                    <img src="<%Response.Write(selFood.UrlImageFood);%>" alt="">
+                </div>
+                <div class="form-save-to-cart">
+                    <form action="" method="get">
+                        <div class="set-amount" style="margin-bottom: 10px;">
+                            <span>Số lượng: </span>
+                            <div style="display: flex;">
+                                <div class="btn-des-amount" id="btn-des-amount">-</div>
+                                <input type="text" name="soluong" id="soluong" value="0">
+                                <div class="btn-ins-amount" id="btn-ins-amount">+</div>
+                            </div>
+                        </div>
+                        <div class="pickup-date">
+                            <span>Thời gian giao hàng:</span>
+                            <select name="thoigiangiao" id="thoigiangiao">
+                                <option value="1">9h00 - 10h00</option>
+                                <option value="2">10h00 - 11h00</option>
+                                <option value="3">11h00 - 12h00</option>
+                                <option value="4">12h00 - 13h00</option>
+                                <option value="5">13h00 - 14h00</option>
+                                <option value="6">14h00 - 15h00</option>
+                            </select>
+                        </div>
+                        <input type="submit" name="btnDatHang" id="btnDatHang" value="Đặt hàng ngay">
+                    </form>
+                </div>
+            </div>
+            <div class="food-info">
+                <h1><%Response.Write(selFood.SNameFood); %></h1>
+                <p><%Response.Write(selFood.STypeFood); %></p>
+                <div class="items-info-services">
+                    <div class="info-rate">
+                        <i class="fa-solid fa-star" style="color: rgb(251, 205, 0);"></i>
+                        <span><%Response.Write(selFood.FRate); %></span>
+                    </div>
+                    <div class="info-time">
+                        <i class="fa-regular fa-clock" style="color: rgba(0, 0, 0, 0.485);"></i>
+                        <span><%Response.Write(selFood.ITime); %></span>
+                    </div>
+                    <div class="info-distance">
+                        <i class="fa-solid fa-location-dot" style="color: rgba(0, 0, 0, 0.485);"></i>
+                        <span><%Response.Write(selFood.FDistance); %>km</span>
+                    </div>
+                </div>
+                <div class="items-discount" style="margin-top: 10px;">
+                    <i class="fa-solid fa-tag" style="color: orangered;"></i>
+                    <span><%Response.Write(selFood.STag); %></span>
+                </div>
+                <div class="food-price">
+                    <div class="old-price"
+                        style="margin: 5px; text-decoration: line-through; color: rgba(0, 0, 0, 0.4); font-size: 15px;">
+                        <%Response.Write(selFood.IOldPrice); %>
+                    </div>
+                    <div class="sale-price" style="margin: 5px; color: red; font-size: 20px;"><%Response.Write(selFood.ISalePrice); %></div>
+                </div>
+            </div>
+        </div>
         <!-- End Food Details -->
         <!-- Start Footer -->
         <div class="footer">
@@ -151,5 +175,6 @@
         </div>
         <!-- End Footer -->
     </div>
+    <script src="../JS/chititetmonan.js"></script>
 </body>
 </html>

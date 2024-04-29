@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Css\chitietmonan.css" />
+    <Content Include="Css\giohang.css" />
     <Content Include="Css\Login.css" />
     <Content Include="Css\mainpage.css" />
     <Content Include="Css\orderpage.css" />
@@ -2178,6 +2179,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\CartDetail.cs" />
     <Compile Include="Models\ChiTietGioHang.cs" />
     <Compile Include="Models\FoodModels.cs" />
     <Compile Include="Models\Cart.cs" />

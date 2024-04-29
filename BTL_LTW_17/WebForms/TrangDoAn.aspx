@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="endof-header">
-                <a href="">
+                <a href="GioHang.aspx">
                     <div class="header-items header-icon">
                         <i class="fa-solid fa-cart-shopping"
                             style="color: rgb(255, 165, 47);"></i>

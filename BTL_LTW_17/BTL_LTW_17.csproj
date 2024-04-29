@@ -2165,6 +2165,7 @@
     <Content Include="JS\PaginationActive.js" />
     <Content Include="JS\ScrollBookMark.js" />
     <Content Include="Web.config" />
+    <Content Include="WebForms\GioHang.aspx" />
     <Content Include="WebForms\Login.aspx" />
     <Content Include="WebForms\Logout.aspx" />
     <Content Include="WebForms\Register.aspx" />
@@ -2177,11 +2178,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ChiTietGioHang.cs" />
     <Compile Include="Models\FoodModels.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\Global.cs" />
     <Compile Include="Utils\Interfaces.cs" />
+    <Compile Include="WebForms\GioHang.aspx.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\GioHang.aspx.designer.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForms\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

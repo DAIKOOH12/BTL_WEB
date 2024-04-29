@@ -19,7 +19,7 @@
         <!-- Start Header -->
         <div class="header">
             <div class="delifood-tag">
-                <a href="./mainpage.html" id="banner-tag">DeliFood</a>
+                <a href="TrangDoAn.aspx" id="banner-tag">DeliFood</a>
                 <div class="search-bar">
                     <span id="icon-map"><i class="fa-solid fa-map-location-dot" style="color: rgb(208, 0, 0);"></i>
                     </span>
@@ -33,9 +33,19 @@
                             style="color: rgb(255, 165, 47);"></i>
                     </div>
                 </a>
-                <a href="">
+
+                <%if (currentUser == null)
+                    { %>
+                <a href="./Login.aspx">
                     <div class="header-items header-account" style="color: rgb(255, 165, 47);">Đăng kí / Đăng nhập</div>
                 </a>
+                <%}
+
+                %>
+                <% else
+                {  %>
+                <b><%Response.Write(currentUser.Username); %></b>
+                <%} %>
                 <div class="header-items header-language">
                     <select name="" id="sel-lang" style="border: 0; width: 100%; height: 100%;">
                         <option value="VI" selected>VI</option>
@@ -53,10 +63,11 @@
                     <img src="<%Response.Write(selFood.UrlImageFood);%>" alt="">
                 </div>
                 <div class="form-save-to-cart">
-                    <form action="" method="get">
+                    <form action="" method="post" runat="server">
                         <div class="set-amount" style="margin-bottom: 10px;">
                             <span>Số lượng: </span>
                             <div style="display: flex;">
+                                <input type="hidden" name="id" id="id" value="<% Response.Write(selFood.SIDFood);%>">
                                 <div class="btn-des-amount" id="btn-des-amount">-</div>
                                 <input type="text" name="soluong" id="soluong" value="0">
                                 <div class="btn-ins-amount" id="btn-ins-amount">+</div>

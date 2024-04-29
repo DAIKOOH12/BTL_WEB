@@ -34,6 +34,8 @@ namespace BTL_LTW_17
             lstFood.Add(new FoodModels("A12", "Mì Trộn Indomie", "Bún - Phở - Mì - Hủ Tiếu, Bún - Phở - Cháo", (float)4.3, 30, (float)1.1, "Bao ngon rẻ, Giá tốt nhất", "../Images/mitronindo.jpg",45000,38000));
 
             Application["DanhSachDoAn"]=lstFood;
+
+            Application["GioHang"] = null;
         }
 
         protected void Session_Start(object sender, EventArgs e)

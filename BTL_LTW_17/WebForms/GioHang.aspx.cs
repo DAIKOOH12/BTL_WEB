@@ -16,6 +16,7 @@ namespace BTL_LTW_17.WebForms
         public List<CartDetail> userFood;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["current_url"] = HttpContext.Current.Request.Url.AbsoluteUri;
             currentUser = Session["current_user"] as AccountModels;
             lstGioHang = Application["GioHang"] as List<Cart>;
             lstFoods = Application["DanhSachDoAn"] as List <FoodModels>;
@@ -42,7 +43,7 @@ namespace BTL_LTW_17.WebForms
                 }
                 else
                 {
-                    Response.Write("Chưa đặt món");
+                    
                 }
             }
             else

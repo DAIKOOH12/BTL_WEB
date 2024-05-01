@@ -41,6 +41,7 @@
                 <% else
                     {  %>
                 <b><%Response.Write(currentUser.Username); %></b>
+                <a href="Logout.aspx">Đăng xuất</a>
                 <%} %>
                 <div class="header-items header-language">
                     <select name="" id="sel-lang" style="border: 0; width: 100%; height: 100%;">

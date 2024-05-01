@@ -14,6 +14,7 @@ namespace BTL_LTW_17.WebForms
         public AccountModels currentUser =null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["current_url"] = HttpContext.Current.Request.Url.AbsoluteUri;
             lstFoods = Application["DanhSachDoAn"] as List<FoodModels>;
 
             if (Session["current_user"] != null)

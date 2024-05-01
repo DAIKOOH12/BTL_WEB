@@ -12,7 +12,9 @@ namespace BTL_LTW_17.WebForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            String lastPage = Session["current_url"] as String;
+            Session["current_user"] = null;
+            Response.Redirect(lastPage);
         }
     }
 }
